@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, Newsreader, Outfit, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
@@ -30,9 +30,26 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0f172a",
+};
+
 export const metadata: Metadata = {
-  title: "Bluepin | AI Health Companion",
-  description: "AI Health Companion for Medical Reports & Glucose Tracking",
+  title: "Bluepin | AI Health Companion for Medical Reports & Glucose Tracking",
+  description: "Bluepin is your AI-powered health companion. Organize medical reports, track glucose, analyze biomarkers, and unlock personalized AI health insights seamlessly.",
+  openGraph: {
+    type: "website",
+    url: "https://bluepin.in/",
+    title: "Bluepin | AI Health Companion for Medical Reports & Glucose Tracking",
+    description: "Bluepin is your AI-powered health companion. Organize medical reports, track glucose, analyze biomarkers, and unlock personalized AI health insights seamlessly.",
+    images: ["https://bluepin.in/Bluepin.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bluepin | AI Health Companion for Medical Reports & Glucose Tracking",
+    description: "Bluepin is your AI-powered health companion. Organize medical reports, track glucose, analyze biomarkers, and unlock personalized AI health insights seamlessly.",
+    images: ["https://bluepin.in/Bluepin.png"],
+  },
 };
 
 export default function RootLayout({
@@ -53,3 +70,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+

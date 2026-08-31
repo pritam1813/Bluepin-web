@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Activity, FileText, ChevronRight, TrendingUp, Clock, Shield, Zap, Heart, Sparkles, Hash, Droplets, Eye, CircleDot, Bean, Brain } from 'lucide-react';
+import { motion } from 'motion/react';
+import { ArrowRight, ChevronRight, Shield, Heart, Eye, Bean, Brain } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { LegalDocsModal } from '../components/LegalDocsModal';
 import { ThemeToggle } from '../components/ThemeToggle';
@@ -100,40 +100,6 @@ const AmbientCurves = () => (
   </div>
 );
 
-// --- Shared Mockup Components ---
-const MockupChart = () => (
-  <div className="w-full h-48 md:h-64 flex items-end justify-between gap-1 md:gap-2 px-2">
-    {[35, 45, 40, 60, 50, 75, 65, 80, 70, 85, 95, 80, 60, 50, 45, 55, 40].map((h, i) => (
-      <motion.div 
-        key={i}
-        initial={{ height: 0 }}
-        whileInView={{ height: `\${h}%` }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: i * 0.05, ease: "easeOut" }}
-        className="flex-1 bg-theme-accent/20 rounded-t-sm relative group hover:bg-theme-accent/40 transition-colors"
-      >
-        <div className="absolute bottom-0 w-full bg-theme-accent/60 rounded-t-sm" style={{ height: '30%' }}></div>
-      </motion.div>
-    ))}
-  </div>
-);
-
-const MockupReportItem = ({ title, date, status }: { title: string, date: string, status: 'stable' | 'up' | 'down' }) => (
-  <div className="flex items-center p-4 border-b border-theme-border/40 last:border-0 hover:bg-theme-bg/50 transition-colors cursor-default">
-    <div className="w-10 h-10 rounded bg-theme-bg flex items-center justify-center mr-4 shrink-0 border border-theme-border/50">
-      <FileText className="w-5 h-5 text-theme-text-sec" />
-    </div>
-    <div className="flex-1 min-w-0">
-      <p className="text-base font-medium text-theme-text truncate">{title}</p>
-      <p className="text-sm text-theme-text-sec">{date}</p>
-    </div>
-    <div className="flex items-center gap-2">
-      {status === 'up' && <TrendingUp className="w-4 h-4 text-theme-warning" />}
-      {status === 'stable' && <Activity className="w-4 h-4 text-theme-success" />}
-    </div>
-  </div>
-);
-
 // --- Sections ---
 
 const Navbar = ({ onStart }: { onStart: (isLogin?: boolean) => void }) => (
@@ -197,8 +163,7 @@ const FeatureCarousel = ({
   buttonColor, 
   activeIndicatorColor,
   stepNumber,
-  stepGradient,
-  reverse = false 
+  stepGradient
 }: { 
   title: string, 
   subtitle: string, 
@@ -209,8 +174,7 @@ const FeatureCarousel = ({
   buttonColor: string, 
   activeIndicatorColor: string,
   stepNumber: number,
-  stepGradient: string,
-  reverse?: boolean 
+  stepGradient: string
 }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % images.length);
@@ -230,19 +194,24 @@ const FeatureCarousel = ({
       {/* 2. Images (Carousel) */}
       <div className="w-full flex flex-col justify-start relative items-start">
         <div className="relative flex items-center justify-start mb-6 pl-2">
-          <div className="relative w-64 md:w-80 bg-white dark:bg-slate-950 rounded-[2.5rem] border-[8px] border-slate-900 dark:border-slate-800 shadow-2xl overflow-hidden z-10 shadow-black/5">
-            <AnimatePresence mode="wait">
+          <div className="relative w-64 md:w-80 aspect-[9/19.5] bg-slate-900 rounded-[2.5rem] border-[8px] border-slate-900 dark:border-slate-800 shadow-2xl overflow-hidden z-10 shadow-black/5">
+            {images.map((src, idx) => (
               <motion.img 
-                key={currentSlide}
-                src={images[currentSlide]} 
-                alt={`${title} Screenshot`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="w-full h-auto object-cover" 
+                key={src}
+                src={src} 
+                alt={`${title} Screenshot ${idx + 1}`}
+                initial={false}
+                animate={{ 
+                  opacity: currentSlide === idx ? 1 : 0,
+                  scale: currentSlide === idx ? 1 : 1.02
+                }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className={cn(
+                  "absolute inset-0 w-full h-full object-cover select-none pointer-events-none",
+                  currentSlide === idx ? "z-10" : "z-0"
+                )} 
               />
-            </AnimatePresence>
+            ))}
           </div>
           <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 ${glowColor} blur-3xl rounded-full z-0 pointer-events-none`}></div>
           
@@ -348,7 +317,6 @@ const FeatureShowcase = ({ onStart }: { onStart: (isLogin?: boolean) => void }) 
           glowColor="bg-emerald-500/20"
           buttonColor="text-emerald-600 dark:text-emerald-400"
           activeIndicatorColor="bg-emerald-500"
-          reverse={true}
         />
       </div>
       <GetStartedButton onStart={onStart} />
