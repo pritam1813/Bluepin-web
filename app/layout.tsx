@@ -11,6 +11,7 @@ import { ThemeProvider } from "../components/ThemeProvider";
 import localFont from "next/font/local";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const garet = localFont({
   src: [
@@ -102,6 +103,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
