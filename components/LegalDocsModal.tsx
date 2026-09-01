@@ -1,4 +1,5 @@
 import React from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { LegalDocType } from "../lib/consentManager";
 import { cn } from "../lib/utils";
@@ -26,10 +27,10 @@ export function LegalDocsModal({
 
   const activeTab = selectedTab ?? defaultTab;
 
-  if (!isOpen) return null;
+  if (!isOpen || typeof document === "undefined") return null;
 
-  return (
-    <div className="fixed inset-0 z-[100] bg-theme-text/20 backdrop-blur-sm flex items-center justify-center p-4">
+  return createPortal(
+    <div className="fixed inset-0 z-100 bg-theme-text/20 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-theme-card w-full max-w-3xl max-h-[90vh] rounded-2xl sm:rounded-3xl shadow-xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
         <div className="flex justify-between items-center p-4 sm:p-6 border-b border-theme-border">
           <h2 className="text-xl font-bold text-theme-text">Legal Documents</h2>
@@ -390,6 +391,7 @@ export function LegalDocsModal({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
