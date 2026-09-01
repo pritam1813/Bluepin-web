@@ -1,6 +1,6 @@
 # 🤖 AI Studio Vibe Coding Guidelines
 
-Because you (the client) are using an AI agent (Google AI Studio / Vibe Coding tool) to make all the changes, the AI itself needs to handle the branching and deployment workflow. 
+Because we are using an AI agent (Google AI Studio / Vibe Coding tool) to make all the changes, the AI itself needs to handle the branching and deployment workflow. 
 
 You don't need to run manual Git commands—you just need to **instruct the AI correctly** so it doesn't accidentally overwrite the live website.
 
