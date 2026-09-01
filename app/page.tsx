@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import { cn } from "../lib/utils";
 import { LegalDocsModal } from "../components/LegalDocsModal";
-import { ThemeToggle } from "../components/ThemeToggle";
 import Image from "next/image";
+import Link from "next/link";
 
 // --- Ambient Dynamic Curves ---
 const AmbientCurves = () => (
@@ -140,34 +140,6 @@ const AmbientCurves = () => (
 
 // --- Sections ---
 
-const Navbar = ({ onStart }: { onStart: (isLogin?: boolean) => void }) => (
-  <nav className="border-b border-theme-border/50 bg-white/80 dark:bg-theme-bg/80 backdrop-blur-xl sticky top-0 z-50">
-    <div className="max-w-350 mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-      <div className="flex items-center gap-3">
-        <Image
-          src="/Bluepin.png"
-          alt="Bluepin Logo"
-          className="w-8 h-8 object-contain"
-          width={32}
-          height={32}
-        />
-        <span className="font-display font-bold text-xl tracking-tight">
-          Blue<span className="font-medium opacity-80">pin.</span>
-        </span>
-      </div>
-      <div className="flex items-center gap-4 md:gap-6">
-        <ThemeToggle />
-        <button
-          onClick={() => onStart(true)}
-          className="text-base font-medium bg-white dark:bg-slate-900 text-blue-600 border border-slate-200 dark:border-slate-800 px-6 py-2.5 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm"
-        >
-          Sign in
-        </button>
-      </div>
-    </div>
-  </nav>
-);
-
 const Hero = ({ onStart }: { onStart: (isLogin?: boolean) => void }) => (
   <section className="pt-10 md:pt-16 pb-8 md:pb-12 px-6 md:px-12 max-w-350 mx-auto relative z-10 flex flex-col items-start text-left">
     <div className="max-w-4xl flex flex-col items-start">
@@ -187,22 +159,24 @@ const Hero = ({ onStart }: { onStart: (isLogin?: boolean) => void }) => (
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
         <div className="relative inline-block">
-          <button
-            onClick={() => onStart(false)}
+          <Link
+            // onClick={() => onStart(false)}
+            href="https://app.bluepin.in"
             className="bg-blue-600 text-white text-lg px-10 py-4 rounded-full font-medium flex items-center justify-center gap-3 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/25"
           >
             <span className="whitespace-nowrap">Get started :)</span>
-          </button>
+          </Link>
           <div className="absolute -top-3 -right-2 bg-emerald-500 text-white text-sm font-bold px-3 py-1 rounded-full rotate-12 shadow-md border-2 border-white dark:border-slate-950 pointer-events-none z-10">
             Free!
           </div>
         </div>
-        <button
-          onClick={() => onStart(true)}
+        <Link
+          // onClick={() => onStart(true)}
+          href="https://app.bluepin.in"
           className="bg-white dark:bg-slate-900 text-blue-600 border border-slate-200 dark:border-slate-800 text-lg px-10 py-4 rounded-full font-medium flex items-center justify-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm"
         >
           <span className="whitespace-nowrap">Sign in</span>
-        </button>
+        </Link>
       </div>
 
       <p className="text-lg md:text-xl font-poppins font-light text-theme-text max-w-2xl">
@@ -333,12 +307,13 @@ const FeatureCarousel = ({
 const GetStartedButton = ({ onStart }: { onStart: (v?: boolean) => void }) => (
   <div className="mt-12 flex justify-start w-full max-w-5xl mx-auto">
     <div className="relative inline-block w-auto">
-      <button
-        onClick={() => onStart(false)}
+      <Link
+        // onClick={() => onStart(false)}
+        href="https://app.bluepin.in"
         className="bg-blue-600 text-white text-lg px-10 py-4 rounded-full font-medium flex items-center justify-center gap-3 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/25"
       >
         <span className="whitespace-nowrap">Get started :)</span>
-      </button>
+      </Link>
       <div className="absolute -top-3 -right-2 bg-emerald-500 text-white text-sm font-bold px-3 py-1 rounded-full rotate-12 shadow-md border-2 border-white dark:border-slate-950 pointer-events-none z-10">
         Free!
       </div>
@@ -659,7 +634,6 @@ export default function WelcomeScreen() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-theme-text font-sans antialiased selection:bg-purple-500/30 overflow-hidden relative z-0">
       <AmbientCurves />
-      <Navbar onStart={handleStart} />
       <main>
         <Hero onStart={handleStart} />
         <FeatureShowcase onStart={handleStart} />
