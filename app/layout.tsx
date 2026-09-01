@@ -1,11 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Poppins,
-  Newsreader,
-  Outfit,
-  Inter,
-  JetBrains_Mono,
-} from "next/font/google";
+import { Poppins, Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import localFont from "next/font/local";
@@ -31,30 +25,16 @@ const garet = localFont({
 });
 
 const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
-});
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-editorial",
+  display: "swap",
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-display",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  variable: "--font-mono",
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -94,7 +74,7 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-N3TDQJHS" />
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} ${newsreader.variable} ${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} ${garet.variable} antialiased min-h-screen`}
+        className={`${poppins.variable} ${outfit.variable} ${garet.variable} antialiased min-h-screen`}
       >
         <ThemeProvider
           attribute="class"

@@ -11,10 +11,8 @@
 }
 
 @theme {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
-  --font-editorial: var(--font-editorial), serif;
   --font-poppins: var(--font-poppins), sans-serif;
   --font-garet: var(--font-garet), sans-serif;
 
