@@ -9,6 +9,8 @@ import {
 import "./globals.css";
 import { ThemeProvider } from "../components/ThemeProvider";
 import localFont from "next/font/local";
+import { GoogleTagManager } from "@next/third-parties/google";
+import Navbar from "@/components/Navbar";
 
 const garet = localFont({
   src: [
@@ -88,6 +90,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <GoogleTagManager gtmId="GTM-N3TDQJHS" />
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${newsreader.variable} ${outfit.variable} ${inter.variable} ${jetbrainsMono.variable} ${garet.variable} antialiased min-h-screen`}
@@ -97,6 +100,7 @@ export default function RootLayout({
           defaultTheme="dark"
           enableSystem={false}
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
