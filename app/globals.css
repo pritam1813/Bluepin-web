@@ -109,3 +109,12 @@
     transform: rotate(0deg);
   }
 }
+
+@keyframes slide-curve {
+  0% { transform: translateX(-100vw); }
+  100% { transform: translateX(100vw); }
+}
+.animate-slide-curve {
+  animation: slide-curve var(--duration) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
