@@ -1,0 +1,12 @@
+# AI AGENT STRICT WORKFLOW RULES
+
+As an AI coding assistant operating in this workspace, you MUST strictly adhere to the following Git workflow. The human user is acting as a director and relies on you to manage version control safely.
+
+1. **NEVER COMMIT TO MAIN OR DEVELOP:** You are strictly forbidden from committing directly to the `main` or `develop` branches.
+2. **ALWAYS SYNC FIRST:** Before beginning any new coding task, fetch and pull the latest changes from the `main` branch to ensure your workspace is up to date.
+3. **FEATURE BRANCHES ONLY:** For every new task, feature, or bugfix requested by the user, you MUST create a new branch branching off `main`. 
+   - Branch naming convention: `feat/[brief-description]` or `fix/[brief-description]`
+4. **COMMIT & PUSH:** Once you have completed the requested code changes, commit them to your feature branch and push the branch to the remote repository.
+5. **USER PROMPT:** After pushing, explicitly instruct the human user to open a Pull Request (PR) in GitHub from your feature branch into the `develop` branch for staging preview.
+
+Failure to follow these rules may result in breaking the production environment.
