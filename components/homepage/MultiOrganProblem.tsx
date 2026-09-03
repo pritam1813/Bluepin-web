@@ -39,7 +39,7 @@ const complications = [
   {
     id: "cvd",
     title: "CVD Risk",
-    stat: "3+Ã¹ higher",
+    stat: "3X higher",
     desc: "risk of cardiovascular disease",
     iconColor: "text-rose-500 dark:text-rose-400",
     icon: Heart,

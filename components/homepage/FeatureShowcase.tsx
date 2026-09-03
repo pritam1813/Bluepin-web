@@ -15,7 +15,7 @@ export default function FeatureShowcase() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-16 md:gap-20">
+      <div className="flex flex-col gap-16 md:gap-20 mx-auto">
         <FeatureCarousel
           title="Glucose Tracking"
           subtitle="Record your glucose daily manually or by uploading pics of your glucometers. See your glucose behaviour with graph trends and Bluepin-AI powered Insights :)"
