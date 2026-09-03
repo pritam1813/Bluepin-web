@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function GetStartedButton() {
   return (
-    <div className="mt-12 flex justify-start w-full max-w-5xl mx-auto">
+    <div className="mt-12 flex justify-start w-full mx-auto">
       <div className="relative inline-block w-auto">
         <Link
           href="https://app.bluepin.in"

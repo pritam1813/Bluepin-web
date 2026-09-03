@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Navbar() {
   return (
     <nav className="border-b border-theme-border/50 bg-white/80 dark:bg-theme-bg/80 backdrop-blur-xl sticky top-0 z-50">
-      <div className="max-w-350 mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      <div className="max-w-8xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Image
             src="/Bluepin.png"

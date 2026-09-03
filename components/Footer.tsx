@@ -9,7 +9,7 @@ function getYear() {
 export default function Footer() {
   return (
     <footer className="bg-white/90 dark:bg-theme-card/90 backdrop-blur-3xl border-t border-theme-border relative z-10">
-      <div className="max-w-350 mx-auto px-6 md:px-12 pt-16 pb-12">
+      <div className="max-w-8xl mx-auto px-6 md:px-12 pt-16 pb-12">
         {/* Trust & Safety */}
         <div className="border-b border-theme-border/50 pb-12 mb-12">
           <div className="max-w-xl mx-auto md:mx-0 text-center md:text-left">

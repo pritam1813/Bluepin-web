@@ -3,8 +3,8 @@ import GetStartedButton from "./GetStartedButton";
 
 export default function FeatureShowcase() {
   return (
-    <section className="pt-12 pb-16 md:pt-16 md:pb-24 px-6 md:px-12 max-w-350 mx-auto relative z-10 border-t border-theme-border/40 mt-8 md:mt-12">
-      <div className="max-w-5xl mx-auto mb-16 md:mb-20 text-left">
+    <section className="pt-10  md:pt-16 pb-8 md:pb-12 px-6 md:px-12 max-w-8xl mx-auto relative z-10 border-t border-theme-border/40">
+      <div className="mx-auto mb-16 md:mb-20 text-left">
         <h2 className="text-4xl md:text-5xl font-display tracking-tight text-theme-text font-bold mb-6">
           Why BluePin?
         </h2>
