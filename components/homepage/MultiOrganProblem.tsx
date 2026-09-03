@@ -39,7 +39,7 @@ const complications = [
   {
     id: "cvd",
     title: "CVD Risk",
-    stat: "3+Ã¹ higher",
+    stat: "3X higher",
     desc: "risk of cardiovascular disease",
     iconColor: "text-rose-500 dark:text-rose-400",
     icon: Heart,
@@ -64,9 +64,9 @@ const complications = [
 
 export default function MultiOrganProblem() {
   return (
-    <section className="py-6 md:py-10 relative z-10 bg-transparent border-t border-theme-border/40">
-      <div className="max-w-350 mx-auto px-6 md:px-12 text-center">
-        <div className="max-w-4xl mx-auto text-left w-full">
+    <section className="py-10 md:py-16 relative z-10 bg-transparent border-t border-theme-border/40">
+      <div className="max-w-8xl mx-auto px-6 md:px-12 text-center">
+        <div className="mx-auto text-left w-full">
           <h2 className="text-3xl md:text-4xl font-display tracking-tight text-theme-text mb-3 font-bold">
             Why it matters
           </h2>
@@ -77,7 +77,7 @@ export default function MultiOrganProblem() {
         </div>
 
         {/* Premium Scientific Cards List */}
-        <div className="max-w-4xl mx-auto flex flex-col gap-3 mb-8">
+        <div className="max-w-4xl flex flex-col gap-3 mb-8">
           {complications.map((comp, idx) => (
             <motion.div
               key={comp.id}
@@ -113,7 +113,7 @@ export default function MultiOrganProblem() {
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto w-full text-left">
+        <div className="mx-auto w-full text-left">
           <motion.h3
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

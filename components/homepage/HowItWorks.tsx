@@ -3,13 +3,13 @@ import GetStartedButton from "./GetStartedButton";
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 bg-white/60 dark:bg-theme-card/60 backdrop-blur-2xl border-t border-theme-border/40 relative z-10">
-      <div className="max-w-350 mx-auto px-6 md:px-12">
-        <h2 className="text-4xl md:text-5xl font-display tracking-tight text-theme-text mb-16 text-left font-bold max-w-5xl mx-auto">
+    <section className="py-10 md:py-16 bg-white/60 dark:bg-theme-card/60 backdrop-blur-2xl border-t border-theme-border/40 relative z-10">
+      <div className="max-w-8xl mx-auto px-6 md:px-12">
+        <h2 className="text-4xl md:text-5xl font-display tracking-tight text-theme-text mb-16 text-left font-bold mx-auto">
           How BluePin works
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mx-auto">
           <div className="flex flex-col gap-3">
             <h3 className="text-xl md:text-2xl font-display text-theme-text font-medium flex items-center">
               <div className="flex items-center text-blue-500 mr-2">
