@@ -27,6 +27,8 @@
   --color-theme-success: var(--status-success);
   --color-theme-warning: var(--status-warning);
   --color-theme-critical: var(--status-critical);
+
+  --spacing-8xl: 90rem;
 }
 
 @layer base {
@@ -111,8 +113,12 @@
 }
 
 @keyframes slide-curve {
-  0% { transform: translateX(-100vw); }
-  100% { transform: translateX(100vw); }
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
 }
 .animate-slide-curve {
   animation: slide-curve var(--duration) linear infinite;
