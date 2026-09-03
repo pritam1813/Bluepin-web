@@ -10,7 +10,7 @@ export default function Navbar() {
           <Image
             src="/Bluepin.png"
             alt="Bluepin Logo"
-            className="w-8 h-8 object-contain"
+            className="size-8 object-contain"
             width={32}
             height={32}
             priority
