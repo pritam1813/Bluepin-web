@@ -24,6 +24,7 @@
   --color-theme-text: var(--text-primary);
   --color-theme-text-sec: var(--text-secondary);
   --color-theme-accent: var(--accent-color);
+  --color-theme-accent-soft: var(--accent-soft);
 
   --color-theme-success: var(--status-success);
   --color-theme-warning: var(--status-warning);
@@ -34,33 +35,34 @@
 
 @layer base {
   :root {
-    /* Earthy Light Mode */
-    --bg-color: #f7f6f1;
+    /* Restrained homepage system: paper + ink + one pin blue */
+    --bg-color: #fafaf8;
     --card-color: #ffffff;
-    --card-sec-color: #edebe0;
-    --border-color: #e2dfd3;
-    --text-primary: #1a1a18;
-    --text-secondary: #777670;
-    --accent-color: #d36135; /* Terracotta / Amber */
+    --card-sec-color: #f1f0eb;
+    --border-color: #e3e1d9;
+    --text-primary: #161a19;
+    --text-secondary: #5f6360;
+    --accent-color: #1e40af; /* pin blue — the only hue */
+    --accent-soft: #eef2ff;
 
-    --status-success: #3a7d44;
-    --status-warning: #d48c29;
-    --status-critical: #c94c4c;
+    --status-success: #1e40af;
+    --status-warning: #1e40af;
+    --status-critical: #1e40af;
   }
 
   .dark {
-    /* Earthy Dark Mode */
-    --bg-color: #121311;
-    --card-color: #1c1e1b;
-    --card-sec-color: #272a25;
-    --border-color: rgba(255, 255, 240, 0.08);
-    --text-primary: #f4f3f0;
-    --text-secondary: #9b9a93;
-    --accent-color: #e87a5d;
+    --bg-color: #0f1211;
+    --card-color: #161a19;
+    --card-sec-color: #1e2322;
+    --border-color: rgba(237, 238, 236, 0.12);
+    --text-primary: #edecee;
+    --text-secondary: #9aa19e;
+    --accent-color: #8ea2ff;
+    --accent-soft: rgba(142, 162, 255, 0.12);
 
-    --status-success: #64c27b;
-    --status-warning: #ffb347;
-    --status-critical: #ff6b6b;
+    --status-success: #8ea2ff;
+    --status-warning: #8ea2ff;
+    --status-critical: #8ea2ff;
   }
 
   body {

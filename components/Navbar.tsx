@@ -35,38 +35,37 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="border-b border-theme-border/50 bg-white/80 dark:bg-theme-bg/80 backdrop-blur-xl sticky top-0 z-50">
-      <div className="max-w-8xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <Link
-            href="/"
-            onClick={() => setMobileOpen(false)}
-            className="flex items-center gap-3"
-          >
-            <Image
-              src={bluepinLogo}
-              alt="Bluepin Logo"
-              className="size-8 object-contain"
-              width={32}
-              height={32}
-              priority
-            />
-            <span className="font-display font-bold text-xl tracking-tight">
-              Blue<span className="font-medium opacity-80">pin.</span>
-            </span>
-          </Link>
-        </div>
+    <nav className="sticky top-0 z-50 border-b border-theme-border bg-theme-bg">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-12">
+        <Link
+          href="/"
+          onClick={() => setMobileOpen(false)}
+          className="flex items-center gap-2.5"
+        >
+          <Image
+            src={bluepinLogo}
+            alt="Bluepin logo"
+            className="size-7 object-contain"
+            width={28}
+            height={28}
+            priority
+          />
+          <span className="font-display text-lg font-semibold tracking-tight">
+            Bluepin
+          </span>
+        </Link>
 
-        <div className="hidden md:flex items-center gap-1 lg:gap-2">
+        <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
               className={cn(
-                "px-3 lg:px-4 py-2 rounded-full text-base font-medium transition-colors",
+                "text-[15px] transition-colors",
                 isActive(link.href)
-                  ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40"
-                  : "text-theme-text-sec hover:text-theme-text hover:bg-theme-border/40",
+                  ? "text-theme-text underline decoration-theme-accent decoration-2 underline-offset-8"
+                  : "text-theme-text-sec hover:text-theme-text",
               )}
             >
               {link.label}
@@ -74,37 +73,37 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="flex items-center gap-3">
           <ThemeToggle />
           <Link
             href="https://app.bluepin.in"
-            className="text-base font-medium bg-white dark:bg-slate-900 text-blue-600 border border-slate-200 dark:border-slate-800 px-6 py-2.5 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm hidden sm:inline-flex"
+            className="hidden rounded-lg bg-theme-text px-5 py-2 text-[15px] font-medium text-theme-bg transition-opacity hover:opacity-90 sm:inline-flex"
           >
             Sign in
           </Link>
           <button
             onClick={() => setMobileOpen((open) => !open)}
-            className="md:hidden p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            className="inline-flex size-10 items-center justify-center rounded-lg border border-theme-border text-theme-text md:hidden"
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
         </div>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-theme-border/50 px-6 py-4 flex flex-col gap-1 bg-white/95 dark:bg-theme-bg/95 backdrop-blur-xl">
+        <div className="border-t border-theme-border px-6 py-3 md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "px-4 py-3 rounded-xl text-base font-medium transition-colors",
+                "block border-b border-theme-border py-3 text-base last:border-0",
                 isActive(link.href)
-                  ? "text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40"
-                  : "text-theme-text-sec hover:text-theme-text hover:bg-theme-border/40",
+                  ? "text-theme-text"
+                  : "text-theme-text-sec",
               )}
             >
               {link.label}
@@ -113,7 +112,7 @@ export default function Navbar() {
           <Link
             href="https://app.bluepin.in"
             onClick={() => setMobileOpen(false)}
-            className="mt-2 text-center text-base font-medium bg-white dark:bg-slate-900 text-blue-600 border border-slate-200 dark:border-slate-800 px-6 py-3 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shadow-sm"
+            className="my-3 flex items-center justify-center rounded-lg bg-theme-text px-5 py-2.5 text-base font-medium text-theme-bg"
           >
             Sign in
           </Link>

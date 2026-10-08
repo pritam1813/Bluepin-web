@@ -13,15 +13,15 @@ export function ThemeToggle() {
     () => false
   );
 
-  if (!mounted) return <div className="w-10 h-10" /> // Placeholder to prevent layout shift
+  if (!mounted) return <div className="size-10" /> // Placeholder to prevent layout shift
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+      className="inline-flex size-10 items-center justify-center rounded-lg border border-theme-border text-theme-text-sec transition-colors hover:text-theme-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-theme-accent"
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+      {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
     </button>
   );
 }

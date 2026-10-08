@@ -9,9 +9,9 @@ import AmbientCurves from "@/components/homepage/AmbientCurves";
 
 export default function WelcomeScreen() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-950 text-theme-text font-sans antialiased selection:bg-purple-500/30 overflow-hidden relative z-0">
+    <div className="min-h-screen bg-theme-bg font-sans text-theme-text antialiased selection:bg-theme-text selection:text-theme-bg">
       <AmbientCurves />
-      <main>
+      <main className="relative">
         <Hero />
         <FeatureShowcase />
         <MultiOrganProblem />
